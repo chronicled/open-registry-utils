@@ -23,11 +23,30 @@ module.exports = {
     // otherwise we're done and y == beta.
     var y = (beta.isEven() ? isYEven : !isYEven) ? beta : p.subtract(beta);
 
-    return bytesToHex( integerToBytes(y) );
+    var hex = bytesToHex( integerToBytes(y) );
+    return ("0000000000" + hex).slice(-64);
+  },
+
+  // Hex string
+  compress: function( publicKey ) {
+    if (publicKey.slice(0, 2) != '04') {
+      throw new Error('Incorrect public key format. Wrong prefix.');
+    }
+
+    if (publicKey.length != (64 + 1) * 2 ) { // 64 bytes X and Y plus 1 prefix byte
+      throw new Error('Incorrect public key format. Wrong length.');
+    }
+
+    return this.compressCoordinate(publicKey.slice(2, 66), publicKey.slice(66, 130));
+  },
+
+  decompress: function( publicKey ) {
+    var coords = this.decompressToCoordinate(publicKey);
+    return '04' + coords.x + coords.y;
   },
 
   // Inputs are in HEX
-  compress: function(x, y) {
+  compressCoordinate: function(x, y) {
     // 02 / 03 as used in Bitcoin
     if (this.hexToBigInteger(y).isEven()) {
       var prefix = '02';
@@ -40,7 +59,7 @@ module.exports = {
   },
 
   // HEX input
-  decompress: function( compressed ) {
+  decompressToCoordinate: function( compressed ) {
     if (compressed.length != (32 + 1) * 2) {
       throw new Error('Wrong length');
     }

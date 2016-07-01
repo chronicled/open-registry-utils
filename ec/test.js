@@ -1,7 +1,7 @@
 var ec = require('./ec.js');
 
 
-// Example keys. 
+// Example keys.
 // Todo: generate keys dynamically
 
 // X, Y
@@ -19,9 +19,15 @@ var keys = [
 ]
 
 keys.map( function( key ) {
+  // console.log(ec.getYbyX(key[0]), ec.hexToBigInteger(key[1]).isEven() );
   console.log( ec.getYbyX(key[0], ec.hexToBigInteger(key[1]).isEven() ) == key[1].toUpperCase() )
 } )
 
 keys.map( function( key ) {
-  console.log( ec.decompress( ec.compress(key[0], key[1]) ).y  == key[1].toUpperCase() )
+  console.log( ec.decompressToCoordinate( ec.compressCoordinate(key[0], key[1]) ).y  == key[1].toUpperCase() )
+} )
+
+keys.map( function( key ) {
+  var uncompressed = '04' + key[0] + key[1];
+  console.log(ec.decompress( ec.compress(uncompressed) ).toLowerCase()  == uncompressed.toLowerCase());
 } )
