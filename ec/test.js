@@ -18,6 +18,7 @@ var keys = [
   ['80a639990eaeb5ed4ead951580052c686ea521de0e4cb22e7864b09874f2b8ff', 'b9071c744f74e0dea7860e0c97464a5a0b7c0cd2c1cb5f2e85a801223b6c4ef9'],
 ]
 
+
 keys.map( function( key ) {
   // console.log(ec.getYbyX(key[0]), ec.hexToBigInteger(key[1]).isEven() );
   console.log( ec.getYbyX(key[0], ec.hexToBigInteger(key[1]).isEven() ) == key[1].toUpperCase() )

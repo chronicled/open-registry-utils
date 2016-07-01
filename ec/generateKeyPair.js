@@ -1,4 +1,4 @@
-// Run in console here http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript 
+// Run in console here http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript
 
 function generateKeyPair() {
    var curve = getSECCurveByName("secp256r1") //found in bitcoinjs-lib/src/jsbn/sec.js
@@ -28,3 +28,5 @@ function generateKeyPair() {
    console.log("X = " + xHex + " \n")
    console.log("Y = " + yHex + " \n")
  }
+
+generateKeyPair();
