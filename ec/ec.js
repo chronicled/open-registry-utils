@@ -107,22 +107,3 @@ function bytesToHex( bytes ) {
 }
 
 
-
-// May be valuable :
-// Refs: http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript
-// https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.ECDSA.html
-// https://kjur.github.io/jsrsasign/api/symbols/src/ecdsa-modified-1.0.js.html
-// https://github.com/bitcoinjs/bitcoinjs-lib
-// https://www.ietf.org/rfc/rfc4492.txt
-
-// var ecurve = require('ecurve')
-// var curve = ecurve.getCurveByName('secp256r1');
-// var Crypto = require('crypto-js')
-// var curve = getSECCurveByName("secp256r1").getCurve();
-// var lib = require('./bitcoinjs-min.js');
-
-// var p = curve.getQ();
-// var a = curve.getA().toBigInteger();
-// var b = curve.getB().toBigInteger();
-
-// // return Crypto.util.bytesToHex( y.toByteArrayUnsigned() );
