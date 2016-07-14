@@ -1,0 +1,26 @@
+{
+  "name": "open-registry-utils",
+  "version": "0.0.1",
+  "description": "Utils library for open-registry apps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chronicled/open-registry-utils.git"
+  },
+  "author": "Augusto Lemble <augusto@ambisafe.co>",
+  "bugs": {
+    "url": "https://github.com/chronicled/open-registry-utils/issues"
+  },
+  "homepage": "https://github.com/chronicled/open-registry-utils#readme",
+  "dependencies": {
+    "bigi": "^1.4.1",
+    "bitcoinjs-lib": "^2.2.0",
+    "ecurve": "^1.0.3",
+    "ezcrypto": "0.0.3",
+    "get-random-values": "^1.2.0",
+    "jsrsasign": "^5.0.12"
+  }
+}

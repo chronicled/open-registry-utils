@@ -1,7 +1,6 @@
-var ec = require('./ec.js');
+var utils = require('./index.js');
 
-
-// Example keys. 
+// Example keys.
 // Todo: generate keys dynamically
 
 // X, Y
@@ -18,10 +17,19 @@ var keys = [
   ['80a639990eaeb5ed4ead951580052c686ea521de0e4cb22e7864b09874f2b8ff', 'b9071c744f74e0dea7860e0c97464a5a0b7c0cd2c1cb5f2e85a801223b6c4ef9'],
 ]
 
-keys.map( function( key ) {
-  console.log( ec.getYbyX(key[0], ec.hexToBigInteger(key[1]).isEven() ) == key[1].toUpperCase() )
-} )
+keys.map(
+    function(key) {
+        console.log( utils.ec.getYbyX(key[0], utils.ec.hexToBigInteger(key[1]).isEven() ) == key[1].toUpperCase() )
+    }
+);
 
-keys.map( function( key ) {
-  console.log( ec.decompress( ec.compress(key[0], key[1]) ).y  == key[1].toUpperCase() )
-} )
+keys.map(
+    function(key) {
+        console.log( utils.ec.decompress( utils.ec.compress(key[0], key[1]) ).y  == key[1].toUpperCase() )
+    }
+);
+var newKeyPair = utils.keyPair.generate();
+console.log(newKeyPair);
+
+var newURN = utils.urn.create('pbk',['ec','secp256r1'],newKeyPair.ecpubhex);
+console.log(newURN);
