@@ -17,10 +17,8 @@
   "homepage": "https://github.com/chronicled/open-registry-utils#readme",
   "dependencies": {
     "bigi": "^1.4.1",
-    "bitcoinjs-lib": "^2.2.0",
     "ecurve": "^1.0.3",
     "ezcrypto": "0.0.3",
-    "get-random-values": "^1.2.0",
     "jsrsasign": "^5.0.12"
   }
 }
