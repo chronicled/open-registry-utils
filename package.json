@@ -1,6 +1,6 @@
 {
-  "name": "@chronicled/open-registry-utils",
-  "version": "0.0.1",
+  "name": "open-registry-utils",
+  "version": "0.0.0",
   "description": "Utils library for open-registry apps.",
   "main": "index.js",
   "scripts": {
