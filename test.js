@@ -51,3 +51,13 @@ var signature = '2f6b41e6091269af8782b0b3e62f00cadd9c724c4ed50fd1c5f04bb1ea45796
 console.log('should be true:', utils.rsa.verify(challenge, signature, urn));
 console.log('should be true:', utils.rsa.verify(challenge, signature, urnWithoutExponent));
 console.log('should be false:', utils.rsa.verify(wrongChallenge, signature, urn));
+
+
+// URN
+console.log('should be true:', utils.urn.check(urn));
+console.log('should be false:', utils.urn.check('pbk'));
+console.log('should be false:', utils.urn.check('pbk:'));
+console.log('should be false:', utils.urn.check('pbk::ec'));
+console.log('should be false:', utils.urn.check(':pbk:ec'));
+console.log('should be false:', utils.urn.check(':'));
+console.log('should be false:', utils.urn.check(''));
