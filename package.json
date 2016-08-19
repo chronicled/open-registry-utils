@@ -4,7 +4,8 @@
   "description": "Utils library for open-registry apps.",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "lint": "./node_modules/.bin/eslint lib/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
+    "eslint": "2.13.1",
     "babel-preset-es2015": "^6.13.2",
     "webpack": "^1.13.1"
   }
