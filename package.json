@@ -11,7 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/chronicled/open-registry-utils.git"
   },
-  "author": "Augusto Lemble <augusto@ambisafe.co>",
+  "contributors": [
+    "Chronicled Inc. (http://chronicled.com)",
+    "Ambisafe Inc. (http://ambisafe.co/)"
+  ],
   "bugs": {
     "url": "https://github.com/chronicled/open-registry-utils/issues"
   },
