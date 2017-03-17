@@ -38,10 +38,12 @@ keys.map( function( key ) {
   console.log(utils.ec.decompress( utils.ec.compress(uncompressed) ).toLowerCase()  == uncompressed.toLowerCase());
 } )
 
+// TODO: change from "should be" to assert or at least a == b, where result must be true if it works
 console.log('');
 console.log('Verify EC:','af2bdbe1aa9b6ec1e2ade1d694f41fc71a831d0268e9891562113d8a62add1bf ; 3046022100efd48b2aacb6a8fd1140dd9cd45e81d69d2c877b56aaf991c34d0ea84eaf3716022100f7cb1c942d657c41d436c7a1b6e29f65f3e900dbb9aff4064dc4ab2f843acda8 ; pbk:ec:secp256r1:0360FED4BA255A9D31C961EB74C6356D68C049B8923B61FA6CE669622E60F29FB6');
 console.log('should be true:',utils.ec.verify('pbk:ec:secp256r1:0360FED4BA255A9D31C961EB74C6356D68C049B8923B61FA6CE669622E60F29FB6', 'af2bdbe1aa9b6ec1e2ade1d694f41fc71a831d0268e9891562113d8a62add1bf','3046022100efd48b2aacb6a8fd1140dd9cd45e81d69d2c877b56aaf991c34d0ea84eaf3716022100f7cb1c942d657c41d436c7a1b6e29f65f3e900dbb9aff4064dc4ab2f843acda8'))
 console.log('should be false:',utils.ec.verify('pbk:ec:secp256r1:0360FED4BA255A9D31C961EB74C6356D68C049B8923B61FA6CE669622E60F29FB6', 'af2bdbe1aa9b6ec1e2ade1d694441fc71a831d0268e9891562113d8a62add1bf','3046022100efd48b2aacb6a8fd1140dd9cd45e81d69d2c877b56aaf991c34d0ea84eaf3716022100f7cb1c942d657c41d436c7a1b6e29f65f3e900dbb9aff4064dc4ab2f843acda8'))
+console.log('should be true:', utils.ec.verify('pbk:ec:secp256r1:0492b0a5466a6711eedcaa63692150631c781542d5958b56ab4a52a91f8455ac2cff37d1518c918255a305cf1b84894a547a1697153fc506e0af1e8357c039692a', '2ed24287293442f80e70b48d80edc9e5417760461f2e22ec70fe034d72e1b589','3045022100e475420623be422cbb178ae49c2e358bdfd442a994f77bf8238c93b4c3dc6ee1022040dd414d8bbb1dc8aa07baa9c6c400762fa9acacdaf5ad095060dc62f4dc16c2'))
 
 console.log('');
 console.log('Generate new key pair');
