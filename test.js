@@ -48,7 +48,7 @@ console.log('should be true:', utils.ec.verify('pbk:ec:secp256r1:0492b0a5466a671
 console.log('');
 console.log('Generate new key pair');
 var newKeyPair = utils.keyPair.generate('secp256r1');
-console.log('newKeyPair:',newKeyPair);
+console.log('newKeyPair: ',newKeyPair);
 
 var pubKeyCompress = utils.ec.compress(newKeyPair.ecpubhex);
 console.log('pubKeyCompress from newKeyPair:',pubKeyCompress);
