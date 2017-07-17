@@ -25,6 +25,12 @@
     "ezcrypto": "0.0.3",
     "jsrsasign": "^5.0.12"
   },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true
+    }
+  },
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
