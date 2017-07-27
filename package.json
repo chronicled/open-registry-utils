@@ -23,7 +23,8 @@
     "bigi": "^1.4.1",
     "ecurve": "^1.0.3",
     "ezcrypto": "0.0.3",
-    "jsrsasign": "^5.0.12"
+    "jsrsasign": "^5.0.12",
+    "lodash": "^4.17.4"
   },
   "eslintConfig": {
     "env": {
