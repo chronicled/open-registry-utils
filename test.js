@@ -76,35 +76,11 @@ describe("URN Utils", () => {
   });
 
   it("should return a string message for invalid urns", () => {
-    should(utils.urn.check('pbk')).be.String();
-    // should(utils.urn.check('pbk:')).be.String();
-    // should(utils.urn.check('pbk::ec')).be.String();
-    // should(utils.urn.check(':pbk:ec')).be.String();
-    // should(utils.urn.check(':')).be.String();
-    // should(utils.urn.check('')).be.String();
-    // should(utils.urn.check('pbk:ec:secp256r11')).be.String();
-    // should(utils.urn.check('pbk:ec:secp256r1')).be.String();
-    // should(utils.urn.check('pbk:ec:secp256r1:something:id')).be.String();
-    // should(utils.urn.check('pbk:ec:secp256r2:123')).be.String();
-    // should(utils.urn.check('pbk:rsa:20480')).be.String();
-    // should(utils.urn.check('pbk:rsa:2048')).be.String();
-    // should(utils.urn.check('pbk:rsa:2048:something:id')).be.String();
-    // should(utils.urn.check('pbk:rsa:512')).be.String();
-    // should(utils.urn.check('ble:1.01')).be.String();
-    // should(utils.urn.check('ble:1.0')).be.String();
-    // should(utils.urn.check('ble:3.0')).be.String();
-    // should(utils.urn.check('ble:1.0:whatever:11223344')).be.String();
-    // should(utils.urn.check('nfc:1.01')).be.String();
-    // should(utils.urn.check('nfc:1.0')).be.String();
-    // should(utils.urn.check('nfc:1.0:something:id')).be.String();
-    // should(utils.urn.check('nfc:2.0')).be.String();
-    // should(utils.urn.check('snu:123')).be.String();
-    // should(utils.urn.check('sn:')).be.String();
-    // should(utils.urn.check('sn:something:id')).be.String();
-    // should(utils.urn.check('sn')).be.String();
-    // should(utils.urn.check('pbk:rsa:2048:123')).be.String();
-    // should(utils.urn.check('ble:1.0:123')).be.String();
-    // should(utils.urn.check('nfc:1.0:123')).be.String();
-    // should(utils.urn.check('sn:123')).be.String();
+    const invalidUrns = [
+      'pbk', 'pbk:', 'pbk::ec', ':pbk:ec', ':', ''
+    ];
+    invalidUrns.map(invalid => {
+      should(utils.urn.check(invalid)).be.String();
+    });
   });
 });
