@@ -4,7 +4,7 @@
   "description": "Utils library for open-registry apps.",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js",
+    "test": "mocha test.js",
     "lint": "./node_modules/.bin/eslint lib/**/*.js"
   },
   "repository": {
@@ -23,7 +23,8 @@
     "bigi": "^1.4.1",
     "ecurve": "^1.0.3",
     "ezcrypto": "0.0.3",
-    "jsrsasign": "^5.0.12"
+    "jsrsasign": "^5.0.12",
+    "lodash": "^4.17.4"
   },
   "eslintConfig": {
     "env": {
@@ -34,8 +35,10 @@
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
-    "eslint": "2.13.1",
     "babel-preset-es2015": "^6.13.2",
+    "eslint": "2.13.1",
+    "mocha": "^3.4.2",
+    "should": "^11.2.1",
     "webpack": "^1.13.1"
   }
 }
